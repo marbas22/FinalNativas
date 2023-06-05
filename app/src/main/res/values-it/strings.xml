@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">Film</string>
-    <string name="menu_home">Casa</string>
+    <string name="menu_home">Home</string>
     <string name="exit">Esci</string>
     <string name="btn_view_movies">Visualizza film</string>
     <string name="btn_add_movie">Aggiungi film</string>
+    <string name="exit_confirmation_title">Conferma uscita</string>
+    <string name="exit_confirmation_message">Sei sicuro di voler uscire applicazione?</string>
+    <string name="exit_confirmation_confirm">Conferma</string>
+    <string name="exit_confirmation_cancel">Annulla</string>
+    <string name="title_activity_movies">MoviesActivity</string>
+    <string name="title_movies_activity">Film</string>
+    <string name="fecha">Data</string>
+    <string name="actor">Attore</string>
+    <string name="titulo">Titolo</string>
+    <string name="ciudad">Città</string>
+    <string name="toast_message">Valutazione salvata</string>
 </resources>

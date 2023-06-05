@@ -14,5 +14,6 @@
     <string name="actor">Actor</string>
     <string name="titulo">Título</string>
     <string name="ciudad">Ciudad</string>
+    <string name="toast_message">Calificación guardada</string>
 
 </resources>

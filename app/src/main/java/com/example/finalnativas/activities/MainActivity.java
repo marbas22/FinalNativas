@@ -1,10 +1,14 @@
 package com.example.finalnativas.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.res.Configuration;
 import android.os.Bundle;
 import com.example.finalnativas.views.MainView;
 import com.example.finalnativas.database.DatabaseHelper;
 import com.example.finalnativas.models.Movie;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +17,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Establecer el idioma en italiano
+        Locale locale = new Locale("it");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
         MainView mainView = new MainView(this);
         setContentView(mainView);
@@ -46,4 +57,5 @@ public class MainActivity extends AppCompatActivity {
             databaseHelper = null;
         }
     }
+
 }

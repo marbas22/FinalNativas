@@ -4,4 +4,15 @@
     <string name="exit">Quitter</string>
     <string name="btn_view_movies">Voir les films</string>
     <string name="btn_add_movie">Ajouter un film</string>
+    <string name="exit_confirmation_title">Confirmer la sortie</string>
+    <string name="exit_confirmation_message">Êtes-vous sûr de vouloir quitter le application?</string>
+    <string name="exit_confirmation_confirm">Confirmer</string>
+    <string name="exit_confirmation_cancel">Annuler</string>
+    <string name="title_activity_movies">MoviesActivity</string>
+    <string name="title_movies_activity">Films</string>
+    <string name="fecha">Date</string>
+    <string name="actor">Acteur</string>
+    <string name="titulo">Titre</string>
+    <string name="ciudad">Ville</string>
+    <string name="toast_message">Enregistrement de la notation</string>
 </resources>

@@ -4,4 +4,15 @@
     <string name="exit">Exit</string>
     <string name="btn_view_movies">View Movies</string>
     <string name="btn_add_movie">Add Movie</string>
+    <string name="exit_confirmation_title">Confirm Exit</string>
+    <string name="exit_confirmation_message">Are you sure you want to exit the application?</string>
+    <string name="exit_confirmation_confirm">Confirm</string>
+    <string name="exit_confirmation_cancel">Cancel</string>
+    <string name="title_activity_movies">MoviesActivity</string>
+    <string name="title_movies_activity">Movies</string>
+    <string name="fecha">Date</string>
+    <string name="actor">Actor</string>
+    <string name="titulo">Title</string>
+    <string name="ciudad">City</string>
+    <string name="toast_message">Rating saved</string>
 </resources>

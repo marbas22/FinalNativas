@@ -94,4 +94,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return movies;
     }
+
+    public void deleteMovieFromDatabase(Integer movieId) {
+        // Obtén una instancia de escritura de la base de datos
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Define la cláusula de selección para eliminar la película por su ID
+        String selection = "id = ?";
+        String[] selectionArgs = {String.valueOf(movieId)};
+
+        // Elimina la fila de la tabla de películas
+        db.delete("movies", selection, selectionArgs);
+
+        // Cierra la conexión a la base de datos
+        db.close();
+    }
 }

@@ -1,14 +1,19 @@
 package com.example.finalnativas.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalnativas.R;
+import com.example.finalnativas.activities.MainActivity;
 import com.example.finalnativas.adapters.MoviesAdapter;
 import com.example.finalnativas.models.Movie;
 import com.example.finalnativas.database.DatabaseHelper;
