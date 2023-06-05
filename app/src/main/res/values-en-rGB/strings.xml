@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="menu_home">Home</string>
+    <string name="exit">Exit</string>
+    <string name="btn_view_movies">View Movies</string>
+    <string name="btn_add_movie">Add Movie</string>
+</resources>

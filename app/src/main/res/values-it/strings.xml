@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Film</string>
+    <string name="menu_home">Casa</string>
+    <string name="exit">Esci</string>
+    <string name="btn_view_movies">Visualizza film</string>
+    <string name="btn_add_movie">Aggiungi film</string>
+</resources>

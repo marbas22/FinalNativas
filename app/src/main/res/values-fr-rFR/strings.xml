@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Films</string>
+    <string name="menu_home">Accueil</string>
+    <string name="exit">Quitter</string>
+    <string name="btn_view_movies">Voir les films</string>
+    <string name="btn_add_movie">Ajouter un film</string>
+</resources>
