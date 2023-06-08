@@ -8,19 +8,31 @@ public class Movie {
     private String date;
     private String city;
 
-    public Movie(String title, String actor, String date, String city) {
+    private Integer stars;
+
+    public Movie(String title, String actor, String date, String city, Integer stars) {
         this.title = title;
         this.actor = actor;
         this.date = date;
         this.city = city;
+        this.stars = stars;
     }
 
-    public Movie(int id, String title, String actor, String date, String city) {
+    public Movie(int id, String title, String actor, String date, String city, Integer stars) {
         this.id = id;
         this.title = title;
         this.actor = actor;
         this.date = date;
         this.city = city;
+        this.stars = stars;
+    }
+
+    public Integer getStars() {
+        return stars;
+    }
+
+    public void setStars(Integer stars) {
+        this.stars = stars;
     }
 
     public String getTitle() {

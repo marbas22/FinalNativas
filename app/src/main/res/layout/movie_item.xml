@@ -1,89 +1,67 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="16dp">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/movie_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            style="@style/TableItemStyle" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/black" />
-
-        <TextView
-            android:id="@+id/movie_actor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            style="@style/TableItemStyle" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/black" />
-
-        <TextView
-            android:id="@+id/movie_date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            style="@style/TableItemStyle" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/black" />
-
-        <TextView
-            android:id="@+id/movie_city"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            style="@style/TableItemStyle" />
-
-        <Button
-            android:id="@+id/button_delete"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/ic_trash"
-            android:gravity="center"
-            android:padding="8dp" />
-
-    </TableRow>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
+    <TextView
+        android:id="@+id/movie_actor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_below="@id/movie_title"
         android:layout_marginTop="8dp" />
 
-</TableLayout>
+    <TextView
+        android:id="@+id/movie_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_below="@id/movie_actor"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/movie_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_below="@id/movie_date"
+        android:layout_marginTop="8dp" />
+
+    <RatingBar
+        android:id="@+id/show_rating_bar"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/movie_city"
+        android:layout_marginTop="8dp"
+        android:isIndicator="true"
+        android:scaleX="0.5"
+        android:scaleY="0.5"/>
+
+    <View
+        android:id="@+id/dividerLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/movie_city"
+        android:layout_marginTop="62dp"
+        android:background="@android:color/black" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_trash"
+        android:gravity="center"
+        android:padding="8dp" />
+
+</RelativeLayout>

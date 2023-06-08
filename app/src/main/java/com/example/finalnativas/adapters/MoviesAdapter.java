@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         holder.movieActor.setText(movie.getActor());
         holder.movieDate.setText(movie.getDate());
         holder.movieCity.setText(movie.getCity());
+        holder.ratingBar.setRating(movie.getStars());
 
         holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +80,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                         View layout = inflater.inflate(R.layout.toast_custom, null);
 
                         TextView textViewToastMessage = layout.findViewById(R.id.textViewToastMessage);
-                        String toastMessage = context.getString(R.string.toast_message);
+                        String toastMessage = context.getString(R.string.toast_message_eliminada);
                         textViewToastMessage.setText(toastMessage);
 
                         Toast toast = new Toast(context.getApplicationContext());
@@ -105,7 +107,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             }
         });
 
-
     }
 
     @Override
@@ -120,6 +121,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         public TextView movieCity;
         public Button buttonDelete;
 
+        public RatingBar ratingBar;
+
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             movieTitle = itemView.findViewById(R.id.movie_title);
@@ -127,10 +130,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             movieDate = itemView.findViewById(R.id.movie_date);
             movieCity = itemView.findViewById(R.id.movie_city);
             buttonDelete = itemView.findViewById(R.id.button_delete);
+            ratingBar = itemView.findViewById(R.id.show_rating_bar);
         }
-    }
-
-    public Movie getItem(int position) {
-        return movies.get(position);
     }
 }

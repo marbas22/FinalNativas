@@ -69,7 +69,7 @@ public class MoviesView extends CollapsingToolbarLayout {
             }
         });
 
-        Button buttonAddFilm = findViewById(R.id.btnAddMovie);
+        Button buttonAddFilm = findViewById(R.id.button_add_movie);
         buttonAddFilm.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

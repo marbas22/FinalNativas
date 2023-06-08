@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Establecer el idioma que queramos depurar
-        Locale locale = new Locale("es");
+        Locale locale = new Locale("it");
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
@@ -35,18 +35,18 @@ public class MainActivity extends AppCompatActivity {
         //insertExampleData();
     }
 
-    private void insertExampleData() {
-        // Abrir la base de datos en modo escritura
-        databaseHelper.open();
-
-        // Insertar películas de ejemplo
-        databaseHelper.insertMovie(new Movie("Título 1", "Actor 1", "Fecha 1", "Ciudad 1"));
-        databaseHelper.insertMovie(new Movie("Título 2", "Actor 2", "Fecha 2", "Ciudad 2"));
-        databaseHelper.insertMovie(new Movie("Título 3", "Actor 3", "Fecha 3", "Ciudad 3"));
-
-        // Cerrar la base de datos
-        databaseHelper.close();
-    }
+//    private void insertExampleData() {
+//        // Abrir la base de datos en modo escritura
+//        databaseHelper.open();
+//
+//        // Insertar películas de ejemplo
+//        databaseHelper.insertMovie(new Movie("Título 1", "Actor 1", "Fecha 1", "Ciudad 1"));
+//        databaseHelper.insertMovie(new Movie("Título 2", "Actor 2", "Fecha 2", "Ciudad 2"));
+//        databaseHelper.insertMovie(new Movie("Título 3", "Actor 3", "Fecha 3", "Ciudad 3"));
+//
+//        // Cerrar la base de datos
+//        databaseHelper.close();
+//    }
 
     @Override
     protected void onDestroy() {

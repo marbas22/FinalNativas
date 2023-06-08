@@ -9,10 +9,22 @@
     <string name="exit_confirmation_confirm">Confirm</string>
     <string name="exit_confirmation_cancel">Cancel</string>
     <string name="title_activity_movies">MoviesActivity</string>
-    <string name="title_movies_activity">Movies</string>
+    <string name="title_movies_activity">My Movies</string>
     <string name="fecha">Date</string>
     <string name="actor">Actor</string>
     <string name="titulo">Title</string>
     <string name="ciudad">City</string>
-    <string name="toast_message">Rating saved</string>
+    <string name="toast_message_eliminada">Movie successfully deleted</string>
+    <string name="toast_message_existe">Movie already exists in your list</string>
+    <string name="toast_message_pelicula_insert">Movie added to your list</string>
+    <string name="title_activity_add_film">AddFilmActivity</string>
+    <string name="busqueda">Search</string>
+    <string name="introducir_titulo_pelicula">Enter the movie title</string>
+    <string name="actor_favorito_de_la_pelicula">Favorite actor of the movie</string>
+    <string name="fecha_de_ver_la_pelicula">Viewing date</string>
+    <string name="ciudad_donde_se_vio">City where the movie was watched</string>
+    <string name="submit_form_movie">Submit</string>
+    <string name="toast_message_campos_vacios">Fill in all fields!</string>
+    <string name="toast_message_formato_fecha">The date must be in the correct format</string>
+    <string name="volver">Back</string>
 </resources>

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "movies.db";
+    private static final String DATABASE_NAME = "finalapp.db";
     private static final int DATABASE_VERSION = 1;
 
     public DatabaseHelper(Context context) {
@@ -23,12 +23,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Crea la tabla para almacenar las películas
-        String createTableQuery = "CREATE TABLE movies (" +
+        String createTableQuery = "CREATE TABLE finalapp (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "title TEXT," +
                 "actor TEXT," +
                 "date TEXT," +
-                "city TEXT)";
+                "city TEXT," +
+                "stars INTEGER)";  // Nuevo campo para las estrellas
         db.execSQL(createTableQuery);
     }
 
@@ -53,9 +54,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("actor", movie.getActor());
         values.put("date", movie.getDate());
         values.put("city", movie.getCity());
+        values.put("stars", movie.getStars());  // Agrega el nuevo campo para las estrellas
 
         // Inserta la fila en la tabla de películas
-        db.insert("movies", null, values);
+        db.insert("finalapp", null, values);
 
         // Cierra la conexión a la base de datos
         db.close();
@@ -68,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // Define la consulta SQL para seleccionar todas las filas de la tabla de películas
-        String query = "SELECT * FROM movies";
+        String query = "SELECT * FROM finalapp";
 
         // Ejecuta la consulta y obtén un cursor que apunte a los resultados
         Cursor cursor = db.rawQuery(query, null);
@@ -81,9 +83,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 @SuppressLint("Range") String actor = cursor.getString(cursor.getColumnIndex("actor"));
                 @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex("date"));
                 @SuppressLint("Range") String city = cursor.getString(cursor.getColumnIndex("city"));
+                @SuppressLint("Range") int stars = cursor.getInt(cursor.getColumnIndex("stars"));  // Nuevo campo para las estrellas
 
                 // Crea un objeto Movie y añádelo a la lista
-                Movie movie = new Movie(id, title, actor, date, city);
+                Movie movie = new Movie(id, title, actor, date, city, stars);
                 movies.add(movie);
             } while (cursor.moveToNext());
         }
@@ -104,9 +107,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(movieId)};
 
         // Elimina la fila de la tabla de películas
-        db.delete("movies", selection, selectionArgs);
+        db.delete("finalapp", selection, selectionArgs);
 
         // Cierra la conexión a la base de datos
         db.close();
     }
+
+    public boolean checkMovieExists(String movieTitle) {
+        // Obtén una instancia de lectura de la base de datos
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // Define la consulta SQL para seleccionar la fila con el título de la película
+        String query = "SELECT * FROM finalapp WHERE title = ?";
+        String[] selectionArgs = {movieTitle};
+
+        // Ejecuta la consulta y obtén un cursor que apunte a los resultados
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        // Verifica si hay algún resultado en el cursor
+        boolean movieExists = cursor.moveToFirst();
+
+        // Cierra el cursor y la conexión a la base de datos
+        cursor.close();
+        db.close();
+
+        return movieExists;
+    }
 }
+

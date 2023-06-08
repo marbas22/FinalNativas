@@ -1,18 +1,30 @@
 <resources>
     <string name="app_name">Film</string>
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Casa</string>
     <string name="exit">Esci</string>
-    <string name="btn_view_movies">Visualizza film</string>
+    <string name="btn_view_movies">Vedi film</string>
     <string name="btn_add_movie">Aggiungi film</string>
-    <string name="exit_confirmation_title">Conferma uscita</string>
-    <string name="exit_confirmation_message">Sei sicuro di voler uscire applicazione?</string>
+    <string name="exit_confirmation_title">Conferma luscita</string>
+    <string name="exit_confirmation_message">Sei sicuro di voler uscire dall applicazione?</string>
     <string name="exit_confirmation_confirm">Conferma</string>
     <string name="exit_confirmation_cancel">Annulla</string>
     <string name="title_activity_movies">MoviesActivity</string>
-    <string name="title_movies_activity">Film</string>
+    <string name="title_movies_activity">I miei film</string>
     <string name="fecha">Data</string>
     <string name="actor">Attore</string>
     <string name="titulo">Titolo</string>
     <string name="ciudad">Città</string>
-    <string name="toast_message">Valutazione salvata</string>
+    <string name="toast_message_eliminada">Film eliminato con successo</string>
+    <string name="toast_message_existe">Il film esiste già nella tua lista</string>
+    <string name="toast_message_pelicula_insert">Film inserito nella tua lista</string>
+    <string name="title_activity_add_film">AddFilmActivity</string>
+    <string name="busqueda">Ricerca</string>
+    <string name="introducir_titulo_pelicula">Inserisci il titolo del film</string>
+    <string name="actor_favorito_de_la_pelicula">Attore preferito del film</string>
+    <string name="fecha_de_ver_la_pelicula">Data di visione</string>
+    <string name="ciudad_donde_se_vio">Città in cui è stato visto il film</string>
+    <string name="submit_form_movie">Invia</string>
+    <string name="toast_message_campos_vacios">Compila tutti i campi!</string>
+    <string name="toast_message_formato_fecha">Il formato della data deve essere corretto</string>
+    <string name="volver">Torna</string>
 </resources>
