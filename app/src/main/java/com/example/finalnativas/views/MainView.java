@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.finalnativas.R;
+import com.example.finalnativas.activities.AddFilmActivity;
 import com.example.finalnativas.activities.MoviesActivity;
 import com.example.finalnativas.utils.MenuHelper;
 
@@ -46,12 +47,12 @@ public class MainView extends LinearLayout {
             }
         });
 
-
         btnAddMovie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Acción cuando se hace clic en el botón "Agregar película"
-                // Aquí puedes agregar el código para manejar el evento de clic en el botón "Agregar película"
+                // Abrir la actividad AddFilmActivity
+                Intent intent = new Intent(getContext(), AddFilmActivity.class);
+                getContext().startActivity(intent);
             }
         });
 
@@ -60,10 +61,7 @@ public class MainView extends LinearLayout {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int itemId = item.getItemId();
-                if (itemId == R.id.menu_home) {
-                    // Acción cuando se selecciona "Home"
-                    return true;
-                } else if (itemId == R.id.menu_exit) {
+                if (itemId == R.id.menu_exit) {
                     menuHelper.showExitConfirmationDialog(new MenuHelper.OnExitConfirmedListener() {
                         @Override
                         public void onExitConfirmed() {

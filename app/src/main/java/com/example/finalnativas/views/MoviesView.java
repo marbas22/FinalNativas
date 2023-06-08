@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalnativas.R;
+import com.example.finalnativas.activities.AddFilmActivity;
 import com.example.finalnativas.activities.MainActivity;
 import com.example.finalnativas.adapters.MoviesAdapter;
 import com.example.finalnativas.models.Movie;
@@ -64,6 +65,16 @@ public class MoviesView extends CollapsingToolbarLayout {
             public void onClick(View v) {
                 // Llevar al usuario a la MainActivity
                 Intent intent = new Intent(context, MainActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+        Button buttonAddFilm = findViewById(R.id.btnAddMovie);
+        buttonAddFilm.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Llevar al usuario a la AddFilmActivity
+                Intent intent = new Intent(context, AddFilmActivity.class);
                 context.startActivity(intent);
             }
         });

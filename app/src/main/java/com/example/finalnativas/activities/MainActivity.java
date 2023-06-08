@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Establecer el idioma en italiano
-        Locale locale = new Locale("it");
+        // Establecer el idioma que queramos depurar
+        Locale locale = new Locale("es");
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
