@@ -40,6 +40,8 @@ public class MoviesView extends CollapsingToolbarLayout {
     }
 
     private void initialize(Context context, AttributeSet attrs) {
+
+        // Código autogenerado por android studio al elegir un componente determinado
         LayoutInflater.from(context).inflate(R.layout.activity_movies, this, true);
 
         toolbar = findViewById(R.id.toolbar);
@@ -50,15 +52,19 @@ public class MoviesView extends CollapsingToolbarLayout {
         toolBarLayout.setCollapsedTitleTextAppearance(R.style.CollapsingToolbarTitleStyle);
         toolBarLayout.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitleStyle);
 
+        // Obtener la instancia del recycler
         recyclerView = findViewById(R.id.recycler_view_movies);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
+        // Obtener la instancia de la BBDD
         databaseHelper = new DatabaseHelper(context);
 
+        // Obtener todas las películas que el usuario ha guardado en su lista de películas
         List<Movie> movies = databaseHelper.getAllMovies();
         moviesAdapter = new MoviesAdapter(movies, context);
         recyclerView.setAdapter(moviesAdapter);
 
+        // Manejar el evento de volver a la pantalla principal de la aplicación
         Button buttonHome = findViewById(R.id.button_home);
         buttonHome.setOnClickListener(new OnClickListener() {
             @Override
@@ -69,6 +75,7 @@ public class MoviesView extends CollapsingToolbarLayout {
             }
         });
 
+        // Manejar el evento de ir a la pantalla de búsqueda de películas para añadir
         Button buttonAddFilm = findViewById(R.id.button_add_movie);
         buttonAddFilm.setOnClickListener(new OnClickListener() {
             @Override

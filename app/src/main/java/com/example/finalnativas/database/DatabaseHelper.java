@@ -29,55 +29,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "actor TEXT," +
                 "date TEXT," +
                 "city TEXT," +
-                "stars INTEGER)";  // Nuevo campo para las estrellas
+                "stars INTEGER)";
         db.execSQL(createTableQuery);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Si hay una actualización de la base de datos, aquí puedes realizar las modificaciones necesarias
-        // Por ejemplo, si necesitas agregar una nueva columna o tabla, puedes hacerlo en este método
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        // Por defecto se deja este método sin realizar ninguna acción.
     }
 
     public void open() {
-        // Obtén una instancia de escritura de la base de datos
+        // Se obtiene una instancia de escritura de la base de datos
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
     public void insertMovie(Movie movie) {
-        // Obtén una instancia de escritura de la base de datos
+        // Se obtiene una instancia de escritura de la base de datos
         SQLiteDatabase db = this.getWritableDatabase();
 
-        // Crea un objeto ContentValues para almacenar los valores de las columnas
+        // Se crea un objeto ContentValues para almacenar los valores de las columnas
         ContentValues values = new ContentValues();
         values.put("title", movie.getTitle());
         values.put("actor", movie.getActor());
         values.put("date", movie.getDate());
         values.put("city", movie.getCity());
-        values.put("stars", movie.getStars());  // Agrega el nuevo campo para las estrellas
+        values.put("stars", movie.getStars());
 
-        // Inserta la fila en la tabla de películas
+        // Se inserta la fila en la tabla de películas
         db.insert("finalapp", null, values);
 
-        // Cierra la conexión a la base de datos
+        // Se cierra la conexión a la base de datos
         db.close();
     }
 
     public List<Movie> getAllMovies() {
         List<Movie> movies = new ArrayList<>();
 
-        // Obtén una instancia de lectura de la base de datos
+        // Se obtiene una instancia de lectura de la base de datos
         SQLiteDatabase db = this.getReadableDatabase();
 
-        // Define la consulta SQL para seleccionar todas las filas de la tabla de películas
+        // Se define la consulta SQL para seleccionar todas las filas de la tabla de películas
         String query = "SELECT * FROM finalapp";
 
-        // Ejecuta la consulta y obtén un cursor que apunte a los resultados
+        // Se ejecuta la consulta y se obtiene un cursor que apunte a los resultados
         Cursor cursor = db.rawQuery(query, null);
 
-        // Recorre el cursor y crea objetos Movie con los datos de cada fila
+        // Se recorre el cursor y se crea objetos Movie con los datos de cada fila
         if (cursor.moveToFirst()) {
             do {
+                // Se obtienen los valores de las columnas para cada fila
                 @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex("id"));
                 @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
                 @SuppressLint("Range") String actor = cursor.getString(cursor.getColumnIndex("actor"));
@@ -85,13 +85,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 @SuppressLint("Range") String city = cursor.getString(cursor.getColumnIndex("city"));
                 @SuppressLint("Range") int stars = cursor.getInt(cursor.getColumnIndex("stars"));  // Nuevo campo para las estrellas
 
-                // Crea un objeto Movie y añádelo a la lista
+                // Se crea un objeto Movie y añádelo a la lista
                 Movie movie = new Movie(id, title, actor, date, city, stars);
                 movies.add(movie);
             } while (cursor.moveToNext());
         }
 
-        // Cierra el cursor y la conexión a la base de datos
+        // Se cierra el cursor y la conexión a la base de datos
         cursor.close();
         db.close();
 
@@ -99,39 +99,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteMovieFromDatabase(Integer movieId) {
-        // Obtén una instancia de escritura de la base de datos
+        // Se obtiene una instancia de escritura de la base de datos
         SQLiteDatabase db = this.getWritableDatabase();
 
-        // Define la cláusula de selección para eliminar la película por su ID
+        // Se define la cláusula de selección para eliminar la película por su ID
         String selection = "id = ?";
         String[] selectionArgs = {String.valueOf(movieId)};
 
-        // Elimina la fila de la tabla de películas
+        // Se elimina la fila de la tabla de películas
         db.delete("finalapp", selection, selectionArgs);
 
-        // Cierra la conexión a la base de datos
+        // Se cierra la conexión a la base de datos
         db.close();
     }
 
     public boolean checkMovieExists(String movieTitle) {
-        // Obtén una instancia de lectura de la base de datos
+        // Se obtiene una instancia de lectura de la base de datos
         SQLiteDatabase db = this.getReadableDatabase();
 
-        // Define la consulta SQL para seleccionar la fila con el título de la película
+        // Se define la consulta SQL para seleccionar la fila con el título de la película
         String query = "SELECT * FROM finalapp WHERE title = ?";
         String[] selectionArgs = {movieTitle};
 
-        // Ejecuta la consulta y obtén un cursor que apunte a los resultados
+        // Se ejecuta la consulta y obtén un cursor que apunte a los resultados
         Cursor cursor = db.rawQuery(query, selectionArgs);
 
-        // Verifica si hay algún resultado en el cursor
+        // Se verifica si hay algún resultado en el cursor
         boolean movieExists = cursor.moveToFirst();
 
-        // Cierra el cursor y la conexión a la base de datos
+        // Se cierra el cursor y la conexión a la base de datos
         cursor.close();
         db.close();
 
         return movieExists;
     }
 }
-
